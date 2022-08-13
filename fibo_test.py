@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
 from typing import List, Text
-from fibo import alg1, alg2, alg3
+from fibo import alg1, alg2, alg3, alg4
 
 @pytest.mark.timeout(60)
 @pytest.mark.skip()
@@ -17,3 +17,8 @@ def test_alg2(inputs: List[Text], outputs: List[Text]):
 @pytest.mark.skip()
 def test_alg3(inputs: List[Text], outputs: List[Text]):
     assert alg3(int(inputs[0])) == int(outputs[0])
+
+@pytest.mark.timeout(60)
+#@pytest.mark.skip()
+def test_alg4(inputs: List[Text], outputs: List[Text]):
+    assert alg4(int(inputs[0])) == int(outputs[0])

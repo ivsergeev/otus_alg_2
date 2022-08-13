@@ -24,9 +24,9 @@ def alg3(n: int) -> int:
 
 def alg4(n: int) -> int:
     '''4. Через возведение матрицы в степень.'''
-    f = Matrix22( 1.0, 1.0, 1.0, 0.0)
+    f = Matrix22.fibo
     fpown = f.pow(n)
-    return fpown.x22
+    return fpown.x11
 
 class Matrix22:
     def __init__(self, x11: float, x12: float, x21: float, x22: float):
@@ -58,3 +58,7 @@ class Matrix22:
     @classmethod
     def identity(cls):
         return Matrix22( 1.0 , 0,0, 0.0, 1.0)
+
+    @classmethod
+    def fibo(cls):
+        return Matrix22( 1.0 , 1.0, 1.0, 0.0)
