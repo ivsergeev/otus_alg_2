@@ -18,7 +18,7 @@ def test_alg2(inputs: List[Text], outputs: List[Text]):
 def test_alg3(inputs: List[Text], outputs: List[Text]):
     assert alg3(int(inputs[0])) == int(outputs[0])
 
-@pytest.mark.timeout(60)
+#@pytest.mark.timeout(60)
 #@pytest.mark.skip()
 def test_alg4(inputs: List[Text], outputs: List[Text]):
     assert alg4(int(inputs[0])) == int(outputs[0])

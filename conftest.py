@@ -8,6 +8,7 @@ OUT_EXT = ".out"
 
 def pytest_addoption(parser):
     parser.addoption("--folder", action="store", default="data", help="Path to OTUS test files")
+    parser.addoption("--count", action="store", default=None, help="Number of cases")
 
 def pytest_generate_tests(metafunc):
     if all(x in metafunc.fixturenames for x in ARGS):
@@ -25,4 +26,7 @@ def pytest_generate_tests(metafunc):
                 with open(output_path) as fout:
                     output_vals = fout.readlines()
                 cases.append((input_vals, output_vals))
+        count = metafunc.config.getoption("count")
+        if count is not None:
+            cases = cases[:int(count)]
         metafunc.parametrize(",".join(ARGS), cases)

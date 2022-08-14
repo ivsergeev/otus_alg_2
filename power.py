@@ -21,10 +21,10 @@ def alg2(x: float, n: int) -> float:
 def alg3(x: float, n: int) -> float:
     '''3. Через двоичное разложение показателя степени.'''
     p = 1
-    d = x
+    d = x if n !=0 else 1
     while(n > 1):
-        n //= 2
-        d *= d
-        if n % 2 == 1:
+        if n & 1 == 1:
             p *= d
-    return p
+        d *= d
+        n >>= 1
+    return p * d
